@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback</title>
+    <style>
+      /* You can add your CSS styles here */
+      body {
+        background-image: url("../static/gif.gif");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+      .feedback {
+        max-width: 800px;
+        margin: 0 auto;
+        font-family: sans-serif;
+        color: #fff;
+      }
+      .feedback form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 200px;
+      }
+      .feedback label {
+        margin-bottom: 0.5rem;
+      }
+      .feedback input[type="text"],
+      .feedback textarea {
+        padding: 0.5rem;
+        margin-bottom: 2rem;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .feedback button {
+        padding: 0.7rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        width: 100px;
+        margin: auto;
+      }
+      .feedback button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="feedback">
+      <form action="/feedback" method="post">
+        <label for="username">Username:</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Username"
+          required
+        />
+
+        <label for="remark">Your Feedback:</label>
+        <textarea
+          id="remark"
+          name="remark"
+          placeholder="Write Your Feedback Here..."
+          rows="4"
+          required
+        ></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
