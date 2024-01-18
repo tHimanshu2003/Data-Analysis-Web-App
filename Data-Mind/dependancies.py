@@ -14,6 +14,10 @@ deta = Deta(DETA_KEY)
 db = deta.Base("Users")
 
 
+def delete_user(username):
+    db.delete(username)
+
+
 def insert_user(email, username, password):
     """
     Inserts Users into the DB
@@ -39,8 +43,7 @@ def fetch_users():
     Fetch Users
     :return Dictionary of Users:
     """
-    users = db.fetch()
-    return users.items
+    return db.fetch().items
 
 
 def get_user_emails():

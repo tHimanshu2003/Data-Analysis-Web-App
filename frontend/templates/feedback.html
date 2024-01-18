@@ -3,26 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="favicon.ico" />
     <title>Feedback</title>
     <style>
       /* You can add your CSS styles here */
       body {
-        background-image: url("../static/gif.gif");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        background-attachment: fixed;
+        font-family: "Source Sans Pro", sans-serif;
+        background-color: #fff;
+      }
+      h1 {
+        margin: 50px 275px;
       }
       .feedback {
         max-width: 800px;
-        margin: 0 auto;
+        margin: auto;
         font-family: sans-serif;
-        color: #fff;
+        color: rgb(14, 17, 23);
+        border: 3px #eee solid;
+        border-radius: 15px;
+        margin-top: 150px;
       }
       .feedback form {
         display: flex;
         flex-direction: column;
-        margin-top: 200px;
+        margin-top: 50px;
+        padding: 50px;
       }
       .feedback label {
         margin-bottom: 0.5rem;
@@ -38,18 +43,21 @@
         padding: 0.7rem;
         background-color: #007bff;
         color: #fff;
-        border: none;
+        border: 2px #eee solid;
         cursor: pointer;
         width: 100px;
         margin: auto;
+        border-radius: 15px;
       }
       .feedback button:hover {
-        background-color: #0056b3;
+        background-color: orangered;
       }
     </style>
   </head>
+  <script src="../static/typing.js"></script>
   <body>
     <div class="feedback">
+      <h1>User Feedback</h1>
       <form action="/feedback" method="post">
         <label for="username">Username:</label>
         <input

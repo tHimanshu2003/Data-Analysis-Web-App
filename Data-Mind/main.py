@@ -2,7 +2,7 @@ import streamlit as st
 import streamlit_authenticator as stauth
 import webbrowser
 import time
-from dependancies import fetch_users
+from dependancies import fetch_users, delete_user
 from helper import (
     data,
     seconddata,
@@ -32,6 +32,7 @@ st.set_page_config(
         "About": "# This is a header. This is an *extremely* cool app!",
     },
 )
+
 st.markdown(
     """
     <style>
@@ -80,25 +81,21 @@ try:
     info, info1 = st.columns(2)
 
     if not authentication_status:
-        st.sidebar.title("Get Back to Home!")
-        home_button = st.sidebar.button("<<< Back to Home")
+        st.sidebar.title("Get Back to Home")
+        home_button = st.sidebar.button("🏠 Home")
         if home_button:
             re_direct("http://127.0.0.1:5000")
-        st.sidebar.title("Create Account!")
-        signup = st.sidebar.button("Sign Up")
+        st.sidebar.title("Create Account")
+        signup = st.sidebar.button("🚀 Sign Up")
         if signup:
             re_direct("http://localhost:8502")
 
     if username:
         if username in usernames:
             if authentication_status:
-                my_bar = st.progress(0, text="Please Wait...")
-                for percent_complete in range(100):
-                    time.sleep(0.01)
-                    my_bar.progress(percent_complete + 1, text="Please Wait...")
-                time.sleep(1)
-                my_bar.empty()
-                st.header(f"🐸 Hello {username}")
+                with st.spinner("Please Wait..."):
+                    time.sleep(1)
+                st.sidebar.success(f"🐸 Welcome {username}")
                 st.sidebar.title("🧊 Data Mind")
                 Authenticator.logout("Logout", "sidebar")
                 file_format_type = ["csv", "txt", "xls", "xlsx", "ods", "odt"]
@@ -543,5 +540,5 @@ try:
         else:
             with info:
                 st.warning("Username does not exist, Please Sign up")
-except TypeError:
-    st.success(TypeError)
+except:
+    st.success("Refresh Page")

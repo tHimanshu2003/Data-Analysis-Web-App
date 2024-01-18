@@ -6,17 +6,13 @@
     <link rel="icon" type="image/png" href="favicon.ico" />
     <link rel="stylesheet" href="../static/app.css" />
     <title>Data Mind</title>
-    <script>
-      function redirectURL() {
-        window.location.href = "http://localhost:8501";
-      }
-    </script>
+    <script src="../static/typing.js"></script>
   </head>
 
   <body>
     <div id="page-wrapper">
       <header id="header">
-        <div class="logo"><h1 style="color: #fff">🧊DATA MIND</h1></div>
+        <div class="logo"><b>🧊DATA MIND</b></div>
 
         <nav id="nav-bar">
           <ul>
@@ -24,8 +20,8 @@
             <li><a class="nav-link" href="#pdt">Features</a></li>
             <li><a class="nav-link" href="#doc">Documentation</a></li>
           </ul>
+          <button onclick="redirectURL()">Login</button>
         </nav>
-        <button class="nav-link" onclick="redirectURL()">Login</button>
       </header>
 
       <div class="container">
@@ -45,7 +41,7 @@
           </div>
           <div class="dm">
             <h2>Get Started With Data Mind!</h2>
-            <a href="#" class="btn">Create Account</a>
+            <a onclick="redirect()" class="btn">Create Account</a></button>
           </div>
         </section>
         <div id="exp"></div>
@@ -68,9 +64,7 @@
             <h2><b>Features</b></h2>
           </div>
           <div class="pdt">
-            <a href="#"
-              ><img src="../static/Data Analytic.png" alt="Data Analytic logo"
-            /></a>
+            <img src="../static/Data Analytic.png" alt="Data Analytic logo" />
             <h3>
               <b>Data Analytic</b> where users can analyze data through Pivot
               Description, Cross Relation, Scaling , and ProfileReport.
@@ -81,16 +75,13 @@
               <b>Data Appearance</b> which seems to handle the visibility of
               data through Convert, Merge, and Transform operations.
             </h3>
-            <a href="#"
-              ><img
-                src="../static/Data Appearance.png"
-                alt="Data Appearance logo"
-            /></a>
+            <img
+              src="../static/Data Appearance.png"
+              alt="Data Appearance logo"
+            />
           </div>
           <div class="pdt">
-            <a href="#"
-              ><img src="../static/Data Triming.png" alt="Data Triming logo"
-            /></a>
+            <img src="../static/Data Triming.png" alt="Data Triming logo" />
             <h3>
               <b>Data Trimming</b> which is related Remove Duplicates, Remove
               Missing Value, and structuring data frames.

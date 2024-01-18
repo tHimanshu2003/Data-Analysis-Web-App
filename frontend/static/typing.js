@@ -36,3 +36,12 @@ const setFavicon = (emoji) => {
 
 setFavicon('🧊');
 
+function redirectURL() {
+  window.location.href = "http://localhost:8501";
+}
+
+function redirect() {
+  window.location.href = "http://localhost:8502";
+}
+
+

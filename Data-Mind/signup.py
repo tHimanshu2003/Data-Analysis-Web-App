@@ -14,12 +14,12 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.sidebar.title("Get Back to Home!")
-Home_Button = st.sidebar.button("<<< Back to Home", key="b1")
-if Home_Button:
+st.sidebar.title("Get Back to Home")
+home_button = st.sidebar.button("🏠 Home", key="home")
+if home_button:
     re_direct("http://127.0.0.1:5000")
-st.sidebar.title("Get Back to Login!")
-login = st.sidebar.button("<<< Back to Login", key="b2")
+st.sidebar.title("Want to Login?")
+login = st.sidebar.button("🔑 Login")
 if login:
     re_direct("http://localhost:8501")
 

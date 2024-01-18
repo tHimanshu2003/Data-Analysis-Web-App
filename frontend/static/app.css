@@ -4,19 +4,22 @@
     box-sizing: border-box;
   }
   body {
-    background-color: rgb(14, 17, 23);
     font-family: "Source Sans Pro", sans-serif;
-    color: rgb(250, 250, 250);
+    background-color: #fff;
+    color: rgb(14, 17, 23);
   }
   button {
-    background-color: rgb(250, 250, 250);
+    /* background-color: rgb(250, 250, 250);
     color: rgb(14, 17, 23);
-    font-family: "Source Sans Pro", sans-serif;
-    font-weight: 400;
+    font-family: "Source Sans Pro", sans-serif; */
+    font-weight: 600;
     font-size: 20px;
     border-radius: 15px;
     height: 40px;
     width: 80px;
+    border: 2px rgb(14, 17, 23) solid;
+    background-color: #fff;
+    color: green;
   }
 
   #page-wrapper {
@@ -28,7 +31,6 @@
   }
 
   a {
-    color: rgb(250, 250, 250);
     text-decoration: none;
   }
 
@@ -46,27 +48,30 @@
     font-size: 1.5em;
     font-weight: 700;
     justify-content: right;
-    border: 2px white solid;
+    border: 2px solid;
     border-radius: 25px;
-    background: transparent;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out; /* Adding transition for smooth effect */
+    cursor: pointer; /* Adding transition for smooth effect */
+    color: rgb(14, 17, 23);
   }
 
   header {
     position: fixed;
     top: 0;
+    margin: auto;
     min-height: 75px;
     padding: 0px 20px;
     display: flex;
     max-width: 1475px;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(14, 17, 23);
+    color: rgb(14, 17, 23);
+    background-color: #fff;
+    border-bottom: 3px #eee solid;
   }
 
   .logo {
     width: 60vw;
+    font-size: 25px;
   }
   #products {
     margin-top: 100px;
@@ -111,8 +116,8 @@
   }
   #explore img {
     max-width: 400px;
-    margin: auto;
-    transition: transform 0.3s ease-in-out; /* Adding transition for smooth effect */
+    margin: auto; /* Adding transition for smooth effect */
+    margin-top: 20px;
   }
   .flex {
     display: flex;
@@ -126,29 +131,21 @@
 
   #nav-bar {
     margin: auto;
+    display: flex;
+    gap: 10px;
   }
   nav {
     font-weight: 400;
   }
 
-  @media (max-width: 650px) {
-    nav {
-      margin-top: 10px;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 0 50px;
-    }
-    nav li {
-      padding-bottom: 5px;
-    }
+  #products img {
+    margin-top: 25px;
   }
 
   nav > ul {
     width: 35vw;
     display: flex;
+    margin: auto;
     flex-direction: row;
     justify-content: space-around;
   }
@@ -161,7 +158,7 @@
 
   footer {
     margin-top: 150px;
-    background-color: rgb(14, 17, 23);
+    background-color: #fff;
     padding: 20px;
   }
 
@@ -175,6 +172,10 @@
     padding: 0 10px;
   }
 
+  a:hover {
+    color: orangered;
+  }
+
   footer > span {
     margin-top: 25px;
     display: flex;
@@ -182,18 +183,33 @@
     font-size: 0.9em;
   }
   .nav-link {
-    transition: transform 0.3s ease-in-out; /* Adding transition for smooth effect */
+    color: rgb(14, 17, 23);
     display: inline-block; /* Ensures proper transformation */
   }
   #explore img:hover {
-    transform: scale(1.1); /* Scale up the image when hovered */
+ /* Scale up the image when hovered */
+ box-shadow: 0 0 20px 0 rgba(5, 20, 154, 0.8);
+
   }
 
   .btn:hover {
-    transform: scale(1.1); /* Scale up the button when hovered */
+    color: orangered; /* Scale up the button when hovered */
   }
   .nav-link:hover {
-    transform: scale(1.1); /* Scale up the link when hovered */
+    color: orangered; /* Scale up the link when hovered */
+  }
+ 
+  #products img:hover {
+    box-shadow: 0 0 20px 0 rgba(5, 20, 154, 0.8);
+  }
+  #documentation img:hover {
+    box-shadow: 0 0 20px 0 rgba(5, 20, 154, 0.8);
+
+  }
+
+  button:hover {
+    color: orangered;
+    border-color: orangered;
   }
   .pdt {
     display: flex;
