@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="favicon.ico" />
-    <title>Feedback</title>
-    <link rel="stylesheet" href="../static/feedback.css" />
+    <title>Delete Account</title>
+    <link rel="stylesheet" href="../static/delete.css" />
   </head>
   <script src="../static/typing.js"></script>
   <body>
@@ -26,9 +26,9 @@
         </div>
       </center>
     </div>
-    <div class="feedback">
-      <h1>User Feedback</h1>
-      <form action="/feedback" method="post">
+    <div class="delete">
+      <h1>Delete Your Account</h1>
+      <form action="/delete" method="post">
         <label for="username">Username:</label>
         <input
           type="text"
@@ -37,16 +37,6 @@
           placeholder="Username"
           required
         />
-
-        <label for="remark">Your Feedback:</label>
-        <textarea
-          id="remark"
-          name="remark"
-          placeholder="Write Your Feedback Here..."
-          rows="4"
-          required
-        ></textarea>
-
         <div style="display: flex">
           <button type="submit">Submit</button>
           <button onclick="redirectURL()">Back</button>

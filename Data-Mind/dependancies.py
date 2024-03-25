@@ -66,7 +66,7 @@ def get_usernames():
     users = db.fetch()
     usernames = []
     for user in users.items:
-        usernames.append(user["key"])
+        usernames.append(user["username"])
     return usernames
 
 
@@ -147,4 +147,4 @@ def sign_up():
             st.form_submit_button("Sign Up")
 
 
-# sign_uo()
+# sign_up()

@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
   }
+
   body {
     font-family: "Source Sans Pro", sans-serif;
     background-color: #fff;
@@ -117,7 +118,7 @@
   #explore img {
     max-width: 400px;
     margin: auto; /* Adding transition for smooth effect */
-    margin-top: 20px;
+    margin-top: 40px;
   }
   .flex {
     display: flex;
@@ -191,6 +192,10 @@
  box-shadow: 0 0 20px 0 rgba(5, 20, 154, 0.8);
 
   }
+
+  html {
+    scroll-behavior: smooth;
+}
 
   .btn:hover {
     color: orangered; /* Scale up the button when hovered */

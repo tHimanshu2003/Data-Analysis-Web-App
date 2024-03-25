@@ -2,7 +2,7 @@ import streamlit as st
 import streamlit_authenticator as stauth
 import webbrowser
 import time
-from dependancies import fetch_users, delete_user
+from dependancies import fetch_users
 from helper import (
     data,
     seconddata,
@@ -27,7 +27,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
     menu_items={
-        "Get Help": "http://127.0.0.1:5000/documentation",
+        "Get Help": "https://github.com/tHimanshu2003",
         "Report a bug": "http://127.0.0.1:5000/feedback",
         "About": "# This is a header. This is an *extremely* cool app!",
     },
@@ -95,7 +95,7 @@ try:
             if authentication_status:
                 with st.spinner("Please Wait..."):
                     time.sleep(1)
-                st.sidebar.success(f"🐸 Welcome {username}")
+                st.sidebar.info(f"🐸 Welcome {username}")
                 st.sidebar.title("🧊 Data Mind")
                 Authenticator.logout("Logout", "sidebar")
                 file_format_type = ["csv", "txt", "xls", "xlsx", "ods", "odt"]
@@ -340,9 +340,9 @@ try:
                             "Draft Changes",
                             help="when you want to rename multiple columns/single column  so first you have to click Save Draft button this updates the data and then press Rename Columns Button.",
                         ):
-                            st.session_state.rename_dict[
-                                rename_column_selector
-                            ] = rename_text_data
+                            st.session_state.rename_dict[rename_column_selector] = (
+                                rename_text_data
+                            )
                         st.code(st.session_state.rename_dict)
 
                         if st.button(
@@ -361,21 +361,58 @@ try:
                     # ===================================================================================================================
 
                     if "Display Plot" in multi_function_selector:
+                        plot_type = st.multiselect(
+                            "Select Chart to Plot",
+                            ["Line Chart", "Bar Chart", "Scatter Chart"],
+                        )
+
                         multi_bar_plotting = st.multiselect(
                             "Enter Name or Select the Column which you Want To Plot: ",
                             str_category,
                         )
 
-                        for i in range(len(multi_bar_plotting)):
-                            column = multi_bar_plotting[i]
-                            st.markdown("#### Bar Plot for {} column".format(column))
-                            bar_plot = (
-                                data[column]
-                                .value_counts()
-                                .reset_index()
-                                .sort_values(by=column, ascending=False)
-                            )
-                            st.bar_chart(bar_plot)
+                        for i in plot_type:
+                            if i == "Line Chart":
+                                for j in range(len(multi_bar_plotting)):
+                                    column = multi_bar_plotting[j]
+                                    st.markdown(
+                                        "#### Line Chart for {} column".format(column)
+                                    )
+                                    line_plot = (
+                                        data[column]
+                                        .value_counts()
+                                        .reset_index()
+                                        .sort_values(by=column, ascending=False)
+                                    )
+                                    st.line_chart(line_plot)
+                            if i == "Bar Chart":
+                                for j in range(len(multi_bar_plotting)):
+                                    column = multi_bar_plotting[j]
+                                    st.markdown(
+                                        "#### Bar Chart for {} column".format(column)
+                                    )
+                                    bar_plot = (
+                                        data[column]
+                                        .value_counts()
+                                        .reset_index()
+                                        .sort_values(by=column, ascending=False)
+                                    )
+                                    st.bar_chart(bar_plot)
+                            if i == "Scatter Chart":
+                                for j in range(len(multi_bar_plotting)):
+                                    column = multi_bar_plotting[j]
+                                    st.markdown(
+                                        "#### Scatter Chart for {} column".format(
+                                            column
+                                        )
+                                    )
+                                    scatter_plot = (
+                                        data[column]
+                                        .value_counts()
+                                        .reset_index()
+                                        .sort_values(by=column, ascending=False)
+                                    )
+                                    st.scatter_chart(scatter_plot)
 
                     # ====================================================================================================================
 
@@ -531,6 +568,9 @@ try:
                             file_name="smaple_data.zip",
                             help="Download some sample data and use it to explore this web app.",
                         )
+                st.sidebar.warning("Danger Zone")
+                if st.sidebar.button("Delete your Account"):
+                    re_direct("http://127.0.0.1:5000/delete")
             elif not authentication_status:
                 with info:
                     st.error("Incorrect Password or username")

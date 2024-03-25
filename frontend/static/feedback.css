@@ -1,0 +1,78 @@
+body {
+    font-family: "Source Sans Pro", sans-serif;
+    background-color: #fff;
+  }
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .flash-message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+
+  .success {
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+  }
+
+  .error {
+    background-color: #f2dede;
+    color: #a94442;
+    border: 1px solid #ebccd1;
+  }
+
+  .close {
+    float: right;
+    cursor: pointer;
+  }
+
+  h1 {
+    margin: 50px 275px;
+  }
+  .flash {
+    align-self: center;
+  }
+  .feedback {
+    max-width: 800px;
+    margin: auto;
+    background-color: #eeb;
+    font-family: sans-serif;
+    color: rgb(14, 17, 23);
+    border: 3px #eee solid;
+    border-radius: 15px;
+    margin-top: 75px;
+  }
+  .feedback form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    padding: 50px;
+  }
+  .feedback label {
+    margin-bottom: 0.5rem;
+  }
+  .feedback input[type="text"],
+  .feedback textarea {
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .feedback button {
+    padding: 0.7rem;
+    background-color: #007bff;
+    color: #fff;
+    border: 2px #eee solid;
+    cursor: pointer;
+    width: 100px;
+    margin: auto;
+    border-radius: 15px;
+  }
+  .feedback button:hover {
+    background-color: orangered;
+  }

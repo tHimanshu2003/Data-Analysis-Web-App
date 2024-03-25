@@ -19,15 +19,8 @@ def data(data, file_type, seperator=None):
     if file_type == "csv":
         data = pd.read_csv(data)
 
-    # elif file_type == "json":
-    #    data = pd.read_json(data)
-    #    data = (data["devices"].apply(pd.Series))
-
     elif file_type in excel_type:
         data = pd.read_excel(data)
-        st.sidebar.info(
-            "If you are using Excel file so there could be chance of getting minor error(temporary sollution: avoid the error by removing overview option from input box) so bear with it. It will be fixed soon"
-        )
 
     elif file_type == "plain":
         try:
@@ -44,15 +37,8 @@ def seconddata(data, file_type, seperator=None):
     if file_type == "csv":
         data = pd.read_csv(data)
 
-    # elif file_type == "json":
-    #    data = pd.read_json(data)
-    #    data = (data["devices"].apply(pd.Series))
-
     elif file_type in excel_type:
         data = pd.read_excel(data)
-        st.sidebar.info(
-            "If you are using Excel file so there could be chance of getting minor error(temporary sollution: avoid the error by removing overview option from input box) so bear with it. It will be fixed soon"
-        )
 
     elif file_type == "plain":
         try:
