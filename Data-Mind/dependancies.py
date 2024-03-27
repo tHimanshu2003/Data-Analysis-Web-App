@@ -145,6 +145,3 @@ def sign_up():
 
         with btn3:
             st.form_submit_button("Sign Up")
-
-
-# sign_up()

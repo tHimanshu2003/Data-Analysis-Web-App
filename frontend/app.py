@@ -28,7 +28,7 @@ for user in users:
     usernames.append(user["username"])
 
 app = Flask(__name__)
-app.secret_key = "d0qpmbynrv1_uiPsXN2Z6NDwVyQZNKEgm8NQeAE2E9Fs"
+app.secret_key = "xyz"
 
 
 @app.route("/")

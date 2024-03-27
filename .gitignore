@@ -18,6 +18,7 @@ orphaned-proofs.prf
 # Ignore PVS log files
 *.log
 
+
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/

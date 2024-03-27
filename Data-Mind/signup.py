@@ -3,17 +3,6 @@ from dependancies import sign_up
 from main import re_direct
 
 
-st.set_page_config(
-    page_title="Data Mind",
-    page_icon="🧊",
-    layout="wide",
-    initial_sidebar_state="expanded",
-    menu_items={
-        "Report a bug": "http://127.0.0.1:5000/feedback",
-        "About": "# This is a header. This is an *extremely* cool app!",
-    },
-)
-
 st.markdown(
     """
     <style>
